@@ -1,0 +1,272 @@
+###Introduction to CSS
+In html folder:
+<style> </style>
+-An Introduction to CSS:
+Make: stylesheet.css
+In index.html folder:
+<head>
+   <meta charset ="utf-8">
+   <title>Introduction to CSS </title>
+   <link rel="stylesheet" href="stylesheet.css" type="text/css" />
+<head>
+
+In stylesheet.css:
+body{
+    background-color: blanchedalmond; :to change background color for whole page
+}
+
+----------
+Style Rules: w3.org/TR/CSS21/propid.html /html-color-codes.info : to find color code
+
+In .css file: (stylesheet.css)
+
+body{
+ background-color:#cccc99; :set up the background color
+ padding:10px;
+}
+h1{
+ background-color:#cccc99; :pick color for header 1
+}
+
+h1,h2{
+ background-color:#cccc99; :pick color for header 1 and 2
+}
+
+div{
+ background-color:#cccc99; pick color inside div
+}
+
+p{
+ background-color:#cccc99; pick color for paragraph
+}
+
+#content{  : have many paragraph, but just pick specific paragraph to change color, add <p id="content"..> in html file. "id" just in <p>
+  background-color:#ffff00;
+}
+
+.bookTitle{ :pick one line to change, add <p class="bookTitle"...> in html file. "class" can be anywhere <p> <div>...
+  font-syle:italic;
+  background-color:#ffff00;
+}
+
+p.bookTitle{ class="bookTitle" in both <div> and <p>, but pick a <p> specific
+  font-syle:italic;
+  background-color:#ffff00;
+}
+
+----------
+Selectors: w3.org/TR/css3-selectors
+
+/* descendant selector */
+div p {
+   bakground-color:#ddddaa;
+}
+
+/* child selector */
+div p{
+   bakground-color:#ddddaa;
+}
+
+/*attribute selector */
+img [alt=spacer] {
+  padding:0px;
+}
+
+/* psuedo class */
+a:visited {color: #ddddd;}
+
+-----------
+-Specifying CSS property values:
+Keywords: thin, thick, larger 
+Physical measurements: inches (in), points (pt), picas(pc) 
+Screen measurements: pixels (px)
+Relative measurements: %,em
+Color codes: #rrggbb, rbg(r,g,b)
+Fonts: helvetica, sans-serif
+
+p{
+   font-size: x-large; /28pt; /1.5em; 
+   border-style:solid;
+   border-color:back;
+   border-width:thick;/ 12px;/ 2mm;
+   width: 50%;
+}
+------
+Add background image:
+body{
+ background-image: url("hien1.jpg");
+ color: white/back (to change to text if background color too dark or light)
+}
+
+-----
+Want to go back to html file:
+<body>
+  <a href="index.html">Refesh</a>: (if html file name: index.html)
+</body>
+
+-------
+CSS Margin: margin-
+<style>
+div {
+  border: 1px solid black;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  margin-right: 150px;
+  margin-left: 80px;
+  background-color: lightblue;
+}
+</style>
+
+<body>
+<div>This div element has a top margin of 100px, a right margin of 150px, a bottom margin of 100px, and a left margin of 80px.</div>
+</body>
+
+-------
+CSS padding: padding-
+<style>
+div {
+  border: 1px solid black;
+  background-color: lightblue;
+  padding-top: 50px;
+  padding-right: 30px;
+  padding-bottom: 50px;
+  padding-left: 80px;
+}
+</style>
+
+<body>
+<div>This div element has a top padding of 50px, a right padding of 30px, a bottom padding of 50px, and a left padding of 80px.</div>
+</body>
+
+---------
+CSS Box Model:
+<style>
+div {
+  background-color: lightgrey;
+  width: 300px;
+  border: 15px solid green;
+  padding: 50px;
+  margin: 20px;
+}
+</style>
+
+---------
+CSS Fonts: font-style
+<head>
+<style>
+p.normal {
+  font-style: normal;
+}
+p.italic {
+  font-style: italic;
+}
+p.oblique {
+  font-style: oblique;
+}
+</style>
+</head>
+<body>
+<p class="normal">This is a paragraph in normal style.</p>
+<p class="italic">This is a paragraph in italic style.</p>
+<p class="oblique">This is a paragraph in oblique style.</p>
+</body>
+
+--------
+CSS height and width:
+<style>
+div {
+  height: 200px;
+  width: 50%;
+  background-color: powderblue;
+}
+</style>
+
+--------
+CSS borders: border-style
+<style>
+p.dotted {border-style: dotted;}
+p.dashed {border-style: dashed;}
+p.solid {border-style: solid;}
+p.double {border-style: double;}
+p.groove {border-style: groove;}
+p.ridge {border-style: ridge;}
+p.inset {border-style: inset;}
+p.outset {border-style: outset;}
+p.none {border-style: none;}
+p.hidden {border-style: hidden;}
+p.mix {border-style: dotted dashed solid double;}
+</style>
+</head>
+<body>
+
+<h2>The border-style Property</h2>
+<p>This property specifies what kind of border to display:</p><p class="dotted">A dotted border.</p>
+
+<p class="dashed">A dashed border.</p>
+<p class="solid">A solid border.</p>
+<p class="double">A double border.</p>
+<p class="groove">A groove border.</p>
+<p class="ridge">A ridge border.</p>
+<p class="inset">An inset border.</p>
+<p class="outset">An outset border.</p>
+<p class="none">No border.</p>
+<p class="hidden">A hidden border.</p>
+<p class="mix">A mixed border.</p>
+
+</body>
+-------------
+CSS Color: color: ; / background-color: ; border: ;
+
+<h1 style="background-color:DodgerBlue;">Hello World</h1>
+<h3 style="color:Tomato;">Hello World</h3>
+<h1 style="border: 2px solid Tomato;">Hello World</h1>
+
+
+--------
+
+<!-- Get method-->
+        <form action="/action_page.php" method="get" target="_blank">
+            First name: <input type="text" name="fname"><br>
+            Last name: <input type="text" name="lname"><br> 
+            <input type="submit" value="Submit">
+        </form>
+
+<!-- Post Method-->
+        <form action="/action_page.php" method="post" target="_blank">
+            First name: <input type="text" name="fname"><br>
+            Last name: <input type="text" name="lname"><br>
+            <input type="submit" value="Submit">
+          </form>
+--------------
+<style>
+                p{
+                      border: 3px dotted green;
+                      margin: 20px auto 50px auto;
+                      padding-top: 2em;
+                      padding-left: 3em;
+                      width:300px;
+                      background-color: beige;
+                      display: block; /*inline-block or block */
+                      font-family: 'Courier New', Courier, monospace;
+                  }
+                  .block{
+                      background-color: aquamarine;
+                  }
+              </style>
+              <div class="block">
+                  start
+                  <p style="border-color: red;"> CSS stands for Cascading Style Sheet
+                  </p>
+                  end 
+              </div>
+
+-------------------
+
+
+
+
+CSS - Cascading & Inheritance:
+
+-Cascade: iecss.com
+
+
