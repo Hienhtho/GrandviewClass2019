@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://kit.fontawesome.com/a22cb39c73.js" crossorigin="anonymous"></script>
+    <title>Document</title>
+</head>
+
+<style>
+    #dragImage {
+        width: 400px;
+        height: 300px;
+        background-color: antiquewhite;
+        margin: auto;
+    }
+
+    #output {
+        width: 800px;
+        background: yellowgreen;
+        height: 500px;
+        margin: auto;
+    }
+
+    div {
+        padding: 1em;
+    }
+
+    #dragImage:hover {
+        background-color: yellow;
+        border: dotted;
+    }
+
+    p::before {
+        content: "Request: ";
+    }
+
+    p::first-letter {
+        color: #ff0000;
+        font-variant: small-caps;
+    }
+</style>
+
+<body>
+    <p>
+        <i class="fas fa-camera"></i> <!-- this icon's 1) style prefix == fas and 2) icon name == camera -->
+        <i class="fas fa-camera"></i> <!-- using an <i> element to reference the icon -->
+        <span class="fas fa-camera"></span> <!-- using a <span> element to reference the icon -->
+        This is an image preview page. Using only javascript, css and html this page should allow you to
+        drag an image from your computer onto the first yellowish box and it will display it as a preview onto
+        the green box.
+    </p>
+
+    <p>
+        <i class="fas fa-book-reader"></i>
+        <i class="fab fa-android"></i>
+        Alternatively you should be able to type a link in the textbox, click <i>Display image</i> button
+        and also preview the image in the green box.
+    </p>
+
+
+    <!-- <div id="dragImage">Drag image here</div> -->
+    <div id="dragImage" ondrop="drop_handler(event)" ondragover="dragover_handler(event)">Drag Image here</div>
+
+    <div><input type="text" id="urlOfImage" /><button>Display image</button></div>
+
+    <div id="output"></div>
+</body>
+
+<script>
+    //drag image from computer onto box of webpage
+    function dragstart_handler(ev) {
+        // Add the target element's id to the data transfer object
+        ev.dataTransfer.setData("image", ev.dragImage.id);
+        ev.dataTransfer.dropEffect = "move";
+    }
+    function dragover_handler(ev) {
+        ev.preventDefault();
+        ev.dataTransfer.dropEffect = "move"
+    }
+    function drop_handler(ev) {
+        ev.preventDefault();
+        // Get the id of the dragImage and add the moved element to the dragImage's DOM
+        var data = ev.dataTransfer.getData("image");
+        ev.dragImage.appendChild(document.getElementById(data));
+    }
+</script>
+
+</html>

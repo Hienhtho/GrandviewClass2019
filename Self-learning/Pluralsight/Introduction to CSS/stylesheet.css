@@ -1,0 +1,59 @@
+/* body{
+    background-color: blanchedalmond;
+ /*   background-image: url("image2.jpg"); */
+/* } */
+/* p{
+    font-size: larger;
+} */
+
+/* h1,h2{
+    background-color: yellow;
+} */
+
+/* div{
+    background-color: aqua;
+} */
+
+/* #content{
+    background-color: brown;
+} */
+/* descendant selector */
+/* div p{
+    background-color: #ddddaa;
+} */
+
+/* child selector */
+/* div > p {
+    background-color: red;
+} */ 
+
+*{
+    box-sizing:border-box;
+}
+#content2{
+    background-color: yellow;
+    float: left;
+    width: 50%
+    padding: 10px;
+    height:300px;
+}
+
+#content{
+    background-color: green;
+    float: left;
+    width: 50%
+    padding: 10px;
+    height:300px;
+}
+
+#div{
+    background-color: 
+      content: "";
+  display: table;
+  clear: both;
+}
+span{
+    border-style: solid;
+    border-width: 5px;
+   
+}
